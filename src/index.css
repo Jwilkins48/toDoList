@@ -1,8 +1,62 @@
-*{
+* {
   box-sizing: border-box;
 }
+
 body {
+  overflow: hidden;
   margin: 0;
   padding: 0;
   background-color: #18181a;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #252529;
+  height: 68px;
+}
+.mainLogo{
+  width: auto;
+  font-size: 43px;
+  color: #67678a;
+  margin: 10px 0 0 60px;
+}
+.inputContainer{
+  display: flex;
+  align-items: center;
+  margin: 5px 0 0 20px;
+
+}
+.searchInput{
+  padding: 5px;
+  height: 32px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #18181a;
+  background-color: #18181a;
+}
+.leftSideInfo{
+  display: flex;
+}
+
+.addTaskBtn{
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #8383a3;
+  font-size: 23px;
+  margin: 20px 50px 0 0;
+}
+
+/* MAIN CONTENT */
+.mainContentContainer{
+  display: flex;
+}
+
+/* LEFT SIDEBAR */
+.homeLeftSide{
+  border-top: 1px solid #202024;
+  background-color: #252529;
+  width: 26rem;
+  height: 94vh;
 }
