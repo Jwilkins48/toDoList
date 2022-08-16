@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -7,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #18181a;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .headerContainer {
@@ -52,6 +54,15 @@ body {
 .mainContentContainer{
   display: flex;
 }
+.allTaskHeader{
+  color: #c5c5cc;
+  margin: 60px 0 60px 90px;
+}
+.tasks{
+  color: #c5c5cc;
+  margin: 25px 0 0 90px;
+
+}
 
 /* LEFT SIDEBAR */
 .homeLeftSide{
@@ -59,4 +70,5 @@ body {
   background-color: #252529;
   width: 26rem;
   height: 94vh;
+  
 }

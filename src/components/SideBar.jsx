@@ -3,7 +3,7 @@ import React from 'react'
 function SideBar() {
   return (
     <div className='sideBarContainer'>
-      <p>hi</p>
+      <p>:)</p>
     </div>
   )
 }

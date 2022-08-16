@@ -1,8 +1,12 @@
 import AllTasks from './components/AllTasks';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
+import data from './data/defaultTasks';
+import {useState} from 'react';
 
 function App() {
+  const [defaultTasks, setDefaultTasks] = useState(data) 
+ 
   return (
     <div className="App">
       <Header />
@@ -12,7 +16,7 @@ function App() {
         </div>
 
         <div className='homeRightSide'>
-          <AllTasks />
+          <AllTasks defaultTasks={defaultTasks} />
         </div>
       </div>
       
