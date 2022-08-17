@@ -1,7 +1,8 @@
 const defaultTasks = [
     {
         id: 1,
-        task: 'Buy groceries'
+        task: 'Buy groceries',
+        date: Date.now()
     },
     {
         id: 2,

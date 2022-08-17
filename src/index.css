@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -17,19 +18,22 @@ body {
   background-color: #252529;
   height: 68px;
 }
-.mainLogo{
+
+.mainLogo {
   width: auto;
   font-size: 43px;
   color: #67678a;
   margin: 10px 0 0 60px;
 }
-.inputContainer{
+
+.inputContainer {
   display: flex;
   align-items: center;
   margin: 5px 0 0 20px;
 
 }
-.searchInput{
+
+.searchInput {
   padding: 5px;
   height: 32px;
   width: 250px;
@@ -37,11 +41,12 @@ body {
   border: 1px solid #18181a;
   background-color: #18181a;
 }
-.leftSideInfo{
+
+.leftSideInfo {
   display: flex;
 }
 
-.addTaskBtn{
+.addTaskBtn {
   cursor: pointer;
   background: none;
   border: none;
@@ -51,24 +56,37 @@ body {
 }
 
 /* MAIN CONTENT */
-.mainContentContainer{
+.mainContentContainer {
   display: flex;
 }
-.allTaskHeader{
-  color: #c5c5cc;
-  margin: 60px 0 60px 90px;
-}
-.tasks{
-  color: #c5c5cc;
-  margin: 25px 0 0 90px;
 
+.allTaskHeader {
+  color: #c5c5cc;
+  margin: 55px 60px;
+}
+
+.card {
+  display: flex;
+  padding: 15px;
+  margin: 35px 60px;
+  border: 1px white solid;
+  width: 80rem;
+}
+
+.checkbox{
+  width: 18px;
+  cursor: pointer;
+}
+.tasks {
+  color: #c5c5cc;
+  margin-left: 10px;
 }
 
 /* LEFT SIDEBAR */
-.homeLeftSide{
+.homeLeftSide {
   border-top: 1px solid #202024;
   background-color: #252529;
   width: 26rem;
   height: 94vh;
-  
+
 }

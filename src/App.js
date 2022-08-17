@@ -5,7 +5,13 @@ import data from './data/defaultTasks';
 import {useState} from 'react';
 
 function App() {
-  const [defaultTasks, setDefaultTasks] = useState(data) 
+  const [defaultTasks, setDefaultTasks] = useState(data);
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked)
+    console.log(checked);
+  }
  
   return (
     <div className="App">
@@ -16,7 +22,7 @@ function App() {
         </div>
 
         <div className='homeRightSide'>
-          <AllTasks defaultTasks={defaultTasks} />
+          <AllTasks checked={checked} handleChange={handleChange} defaultTasks={defaultTasks} />
         </div>
       </div>
       
