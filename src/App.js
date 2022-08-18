@@ -22,14 +22,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header addTask={addTask} />
+      <Header />
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
           <SideBar />
         </div>
 
         <div className='homeRightSide'>
-          <AllTasks checked={checked} handleChange={handleChange} defaultTasks={defaultTasks} />
+          <AllTasks addTask={addTask} checked={checked} handleChange={handleChange} defaultTasks={defaultTasks} />
         </div>
       </div>
       

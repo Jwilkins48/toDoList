@@ -29,7 +29,7 @@ return (
   </div>
 
   <div className="rightSideInfo">
-    <button className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i></button>
+    {/* <button className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i></button> */}
   </div>
 </div>
 )

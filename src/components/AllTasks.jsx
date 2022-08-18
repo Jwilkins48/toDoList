@@ -1,6 +1,7 @@
 import React from 'react'
+import AddTaskDropdown from './AddTaskDropdown';
 
-function AllTasks({defaultTasks, handleChange, checked}) {
+function AllTasks({defaultTasks, handleChange, checked, addTask}) {
 return (
 <div>
   <h2 className='allTaskHeader'>Things To Do</h2>
@@ -11,6 +12,8 @@ return (
       <h3 className='tasks'>{task}</h3>
   </div>
   ))}
+
+    <AddTaskDropdown addTask={addTask} className={'mainPageAddForm'} />
 
 </div>
 )
