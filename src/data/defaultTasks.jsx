@@ -6,10 +6,13 @@ const defaultTasks = [
     },
     {
         id: 2,
-        task: 'Take the dog for a walk'
+        task: 'Take the dog for a walk',
+        date: '08/19/2022'
+
     },{
         id: 3,
-        task: 'Mow the lawn'
+        task: 'Mow the lawn',
+        date: Date.now()
     }
 ]
 

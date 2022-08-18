@@ -3,6 +3,8 @@ import Header from './components/Header';
 import SideBar from './components/SideBar';
 import data from './data/defaultTasks';
 import {useState} from 'react';
+import {v4 as uuidv4} from 'uuid'
+
 
 function App() {
   const [defaultTasks, setDefaultTasks] = useState(data);
@@ -13,9 +15,14 @@ function App() {
     console.log(checked);
   }
  
+  const addTask = (newTask) => {
+    newTask.id = uuidv4();
+    setDefaultTasks([newTask, ...defaultTasks])
+  }
+
   return (
     <div className="App">
-      <Header />
+      <Header addTask={addTask} />
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
           <SideBar />

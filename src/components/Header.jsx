@@ -1,6 +1,24 @@
-import React from 'react'
+import { useState } from 'react';
 
-function Header() {
+function Header({addTask}) {
+
+const [tasks, setTasks] = useState('');
+
+const handleChange = (e) => {
+  setTasks(e.target.value);
+}
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const newTask = {
+  task: tasks,
+  date: Date.now()
+  }
+  addTask(newTask);
+  setTasks('');
+}
+
+
 return (
 <div className='headerContainer'>
   <div className="leftSideInfo">
