@@ -8,6 +8,10 @@ import {v4 as uuidv4} from 'uuid'
 
 function App() {
   const [defaultTasks, setDefaultTasks] = useState(data);
+
+  const deleteTask = (id) => {
+    setDefaultTasks(defaultTasks.filter((item) => item.id !== id));
+  }
  
   const addTask = (newTask) => {
     newTask.id = uuidv4();
@@ -23,7 +27,7 @@ function App() {
         </div>
 
         <div className='homeRightSide'>
-          <AllTasks addTask={addTask} defaultTasks={defaultTasks} />
+          <AllTasks deleteTask={deleteTask} addTask={addTask} defaultTasks={defaultTasks} />
         </div>
       </div>
       

@@ -73,7 +73,24 @@ body {
   margin: 35px 60px;
   border: 1px white solid;
   width: 80rem;
+  position: relative;
 }
+.optionsBtn{
+  padding: 7px;
+  cursor: pointer;
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: #c5c5cc;
+  position: absolute;
+  right: 15px;
+  top: 7px;
+}
+.optionsBtn:hover{
+  background-color:#4646468c;
+  border-radius: 40px;
+}
+
 
 .checkbox {
   height: 58px;
