@@ -1,15 +1,16 @@
 import React from 'react'
 import AddTaskDropdown from './AddTaskDropdown';
+import Checkbox from './Checkbox';
 
-function AllTasks({defaultTasks, handleChange, checked, addTask}) {
+function AllTasks({defaultTasks, addTask}) {
 return (
 <div>
   <h2 className='allTaskHeader'>Things To Do</h2>
 
-  {defaultTasks.map(({task, id}, index) => (
-  <div className='card' key={id}>
-    <input className='checkbox' type='checkbox' onChange={handleChange} checked={checked} value={task} id={index}></input>
-      <h3 className='tasks'>{task}</h3>
+  {defaultTasks.map((item) => (
+  <div className='card' key={item.id}>
+    <Checkbox />
+      <h3 className='tasks'>{item.task}</h3>
   </div>
   ))}
 

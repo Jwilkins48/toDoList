@@ -11,11 +11,6 @@ function AddTaskDropdown({className, addTask}) {
     }
 
     const handleChange = (e) => {
-        // if(task === ''){
-        //     alert('Enter Task')
-        // } else{
-        //     setTask(e.target.value)
-        // }
         setTask(e.target.value)
     }
 
@@ -38,7 +33,6 @@ return (
     {open &&(<form onSubmit={handleSubmit} className="dropDown">
         <input onChange={handleChange} value={task} autoComplete='off' className='dropDownInput' placeholder='Enter Task'></input>
         <button className='addTaskDropdownBtn'>Add Task</button>
-        {/* <button className='cancelDropdownBtn'>Cancel</button> */}
     </form>)}
 </div>
 )
