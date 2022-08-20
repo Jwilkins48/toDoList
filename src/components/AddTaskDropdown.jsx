@@ -27,13 +27,16 @@ function AddTaskDropdown({className, addTask}) {
 return (
 <div className={className}>
     <hr className='hr' />
-    <button onClick={handleButtonClick} className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i> Add
+    <div className="dropdownWrapper">
+        <button onClick={handleButtonClick} className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i> Add
         Task</button>
 
-    {open &&(<form onSubmit={handleSubmit} className="dropDown">
-        <input onChange={handleChange} value={task} autoComplete='off' className='dropDownInput' placeholder='Enter Task'></input>
-        <button className='addTaskDropdownBtn'>Add Task</button>
-    </form>)}
+        {open &&(<form onSubmit={handleSubmit} id="dropDown">
+            <input onChange={handleChange} value={task} autoComplete='off' className='dropDownInput' placeholder='Enter Task'></input>
+            <button className='addTaskDropdownBtn'>Add Task</button>
+        </form>)}
+    </div>
+    
 </div>
 )
 }

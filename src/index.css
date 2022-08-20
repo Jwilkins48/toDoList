@@ -69,26 +69,88 @@ body {
 .card {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
+  align-items: center;
   padding: 15px;
   margin: 35px 60px;
   border: 1px white solid;
   width: 80rem;
   position: relative;
 }
-.optionsBtn{
+
+.editInput{
+  width: 400px;
+  height: 50px;
+  padding: 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #dfdfdf;
+}
+
+/* .dropDownOptions {
+  opacity: 0;
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  transform: translateY(-10px);
+  position: absolute;
+  right: 0;
+  background-color: #000000;
+  border: 1px solid #5a5959;
+  color: #dddddd;
+  padding: .75rem;
+  border-radius: .25rem;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taskDropdown>.optionsBtn:focus+.dropDownOptions {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.dropDownList li{
+  list-style-type: none;
+  padding: 13px 0 13px 0;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  color: #cfcfcf;
+} */
+
+.editBtn{
   padding: 7px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   background: none;
   border: none;
   color: #c5c5cc;
   position: absolute;
-  right: 15px;
+  right: 40px;
   top: 7px;
 }
-.optionsBtn:hover{
-  background-color:#4646468c;
+.editBtn:hover {
+  background-color: #4646468c;
   border-radius: 40px;
+}
+
+.optionsBtn {
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #c5c5cc;
+  position: absolute;
+  right: 13px;
+  top: 6px;
+}
+
+.optionsBtn:hover {
+  background-color: #4646468c;
+  border-radius: 50px;
 }
 
 
@@ -104,7 +166,12 @@ body {
 }
 
 /* ADD TASK DROPDOWN */
-.dropDown {
+.dropdownWrapper {
+  position: relative;
+  width: 800px;
+}
+
+#dropDown {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 4px;
   align-items: center;
@@ -116,7 +183,6 @@ body {
   width: 800px;
   z-index: 2;
   border: 1px solid white;
-  /* transition: all 0.4s ease-in-out; */
 }
 
 .dropDownInput {
