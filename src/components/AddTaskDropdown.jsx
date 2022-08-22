@@ -21,6 +21,7 @@ function AddTaskDropdown({className, addTask}) {
             date: Date.now()
         }
         addTask(newTask);
+        handleButtonClick()
         setTask('');
     }
 
