@@ -6,12 +6,22 @@ import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid'
 
 function App() {
+  const current = new Date();
+  const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   //Task array
   const [defaultTasks, setDefaultTasks] = useState(data);
+  const [filteredList, setFilteredList] = useState(defaultTasks);
 
+
+  const displayAll = () => {
+    setDefaultTasks(filteredList)
+  }
   //Display Completed Tasks
   const displayCompleted = () => {
-    setDefaultTasks(defaultTasks.filter((item) => item.checked === true));
+    setDefaultTasks(filteredList.filter((item) => item.checked === true));
+  }
+  const displayToday = () => {
+    setDefaultTasks(filteredList.filter((item) => item.date === CurrentDate));
   }
 
   //Edit-Add-Delete Task Buttons
@@ -39,7 +49,7 @@ function App() {
       <Header />
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
-          <SideBar displayCompleted={displayCompleted} defaultTasks={defaultTasks} />
+          <SideBar displayToday={displayToday} displayAll={displayAll}  displayCompleted={displayCompleted} defaultTasks={defaultTasks} />
         </div>
 
         <div className='homeRightSide'>

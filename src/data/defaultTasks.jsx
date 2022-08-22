@@ -1,8 +1,12 @@
+const current = new Date();
+const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
 const defaultTasks = [
+    
     {
         id: 1,
         task: 'Buy groceries',
-        date: Date.now()
+        date: CurrentDate
     },
     {
         id: 2,
@@ -12,7 +16,7 @@ const defaultTasks = [
     },{
         id: 3,
         task: 'Mow the lawn',
-        date: Date.now()
+        date: CurrentDate
     }
 ]
 

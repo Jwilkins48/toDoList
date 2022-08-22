@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 function AddTaskDropdown({className, addTask}) {
+    const current = new Date();
+    const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
     const [open, setOpen] = useState(false);
     const [task, setTask] = useState('');
@@ -18,7 +20,7 @@ function AddTaskDropdown({className, addTask}) {
         e.preventDefault();
         const newTask = {
             task: task,
-            date: Date.now()
+            date: CurrentDate
         }
         addTask(newTask);
         handleButtonClick()
