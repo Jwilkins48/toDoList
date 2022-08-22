@@ -7,7 +7,18 @@ import {v4 as uuidv4} from 'uuid'
 
 
 function App() {
+
   const [defaultTasks, setDefaultTasks] = useState(data);
+
+  const editTask = (id, newToDo) => {
+    const editedToDo = defaultTasks.map(item => {
+      if(id === item.id){
+        return { ...defaultTasks, task: newToDo}
+      }
+      return item;
+    })
+    setDefaultTasks(editedToDo);
+  }
 
   const deleteTask = (id) => {
     setDefaultTasks(defaultTasks.filter((item) => item.id !== id));
@@ -27,7 +38,7 @@ function App() {
         </div>
 
         <div className='homeRightSide'>
-          <AllTasks deleteTask={deleteTask} addTask={addTask} defaultTasks={defaultTasks} />
+          <AllTasks editTask={editTask} deleteTask={deleteTask} addTask={addTask} defaultTasks={defaultTasks} />
         </div>
       </div>
       
