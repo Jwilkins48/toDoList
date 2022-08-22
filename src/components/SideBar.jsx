@@ -1,12 +1,14 @@
 import React from 'react'
 
-function SideBar() {
+function SideBar({defaultTasks, displayCompleted}) {
+
+
   return (
     <div className='sideBarContainer'>
       <div className='tabContainer'>
         <button>Today</button> 
         <button>All Tasks</button>
-        <button>Completed Tasks</button>
+        <button onClick={displayCompleted}>Completed Tasks</button>
       </div>
     </div>
   )

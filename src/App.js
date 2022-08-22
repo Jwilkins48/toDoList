@@ -6,9 +6,15 @@ import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid'
 
 function App() {
-
+  //Task array
   const [defaultTasks, setDefaultTasks] = useState(data);
 
+  //Display Completed Tasks
+  const displayCompleted = () => {
+    setDefaultTasks(defaultTasks.filter((item) => item.checked === true));
+  }
+
+  //Edit-Add-Delete Task Buttons
   const editTask = (id, newToDo) => {
     const editedToDo = defaultTasks.map(item => {
       if(id === item.id){
@@ -33,7 +39,7 @@ function App() {
       <Header />
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
-          <SideBar defaultTasks={defaultTasks} />
+          <SideBar displayCompleted={displayCompleted} defaultTasks={defaultTasks} />
         </div>
 
         <div className='homeRightSide'>

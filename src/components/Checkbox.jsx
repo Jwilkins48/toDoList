@@ -4,11 +4,11 @@ import {useState} from 'react';
 function Checkbox({defaultTasks, item}) {
     const [checked, setChecked] = useState(false);
 
-    const handleChange = (id) => {
+    const handleCheckChange = (id) => {
         setChecked(!checked)
         defaultTasks.map(item => {
             if(item.id === id){
-                item.checked = checked
+                item.checked = !checked
             }
             return item.checked
         }) 
@@ -17,7 +17,7 @@ function Checkbox({defaultTasks, item}) {
     }
 return (
 <div>
-    <input className='checkbox' type='checkbox' name='check' onChange={() => handleChange(item.id)} checked={checked}></input>
+    <input className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(item.id)} checked={checked}></input>
 </div>
 )
 }
