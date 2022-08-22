@@ -3,7 +3,11 @@ import React from 'react'
 function SideBar() {
   return (
     <div className='sideBarContainer'>
-      <p>:)</p>
+      <div className='tabContainer'>
+        <button>Today</button> 
+        <button>All Tasks</button>
+        <button>Completed Tasks</button>
+      </div>
     </div>
   )
 }

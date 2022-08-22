@@ -5,7 +5,6 @@ import data from './data/defaultTasks';
 import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid'
 
-
 function App() {
 
   const [defaultTasks, setDefaultTasks] = useState(data);
@@ -34,7 +33,7 @@ function App() {
       <Header />
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
-          <SideBar />
+          <SideBar defaultTasks={defaultTasks} />
         </div>
 
         <div className='homeRightSide'>

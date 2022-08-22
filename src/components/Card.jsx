@@ -19,13 +19,16 @@ defaultTasks.map(item => {
 if(item.id === id){
 setEditing(true);
 }
+return editing
 })
 }
 
 const handleUpdateClick = (id) => {
+
 editTask(id,updatedToDo)
 setEditing(false)
 }
+
 let viewMode = {};
 let editMode = {};
 
@@ -34,6 +37,7 @@ viewMode.display = 'none'
 } else {
 editMode.display = 'none'
 }
+
 return (
 <div>
     {defaultTasks.map((item) => (
