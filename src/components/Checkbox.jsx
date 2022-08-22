@@ -5,6 +5,7 @@ function Checkbox({defaultTasks, item}) {
     const [checked, setChecked] = useState(false);
 
     const handleCheckChange = (id) => {
+        //Mark and label checked boxes
         setChecked(!checked)
         defaultTasks.map(item => {
             if(item.id === id){
@@ -12,7 +13,6 @@ function Checkbox({defaultTasks, item}) {
             }
             return item.checked
         }) 
-    
         console.log(`item is ${item.checked}`);
     }
 return (

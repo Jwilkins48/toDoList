@@ -1,3 +1,4 @@
+// Format Date
 const current = new Date();
 const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 

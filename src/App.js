@@ -6,13 +6,14 @@ import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid'
 
 function App() {
+  //Format Date
   const current = new Date();
   const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   //Task array
   const [defaultTasks, setDefaultTasks] = useState(data);
   const [filteredList, setFilteredList] = useState(defaultTasks);
 
-
+  //Display All Tasks
   const displayAll = () => {
     setDefaultTasks(filteredList)
   }
@@ -20,13 +21,14 @@ function App() {
   const displayCompleted = () => {
     setDefaultTasks(filteredList.filter((item) => item.checked === true));
   }
+  //Display Todays Tasks
   const displayToday = () => {
     setDefaultTasks(filteredList.filter((item) => item.date === CurrentDate));
   }
 
   //Edit-Add-Delete Task Buttons
   const editTask = (id, newToDo) => {
-    const editedToDo = defaultTasks.map(item => {
+    const editedToDo = defaultTasks.map(item => { 
       if(id === item.id){
         return { ...defaultTasks, task: newToDo}
       }
@@ -43,7 +45,8 @@ function App() {
     newTask.id = uuidv4();
     setDefaultTasks([newTask, ...defaultTasks])
   }
-
+  //
+  
   return (
     <div className="App">
       <Header />

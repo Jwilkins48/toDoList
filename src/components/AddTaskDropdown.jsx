@@ -7,6 +7,7 @@ function AddTaskDropdown({className, addTask}) {
     const [open, setOpen] = useState(false);
     const [task, setTask] = useState('');
 
+    //Open Dropdown
     const handleButtonClick = () => {
         setOpen(!open)
         console.log(open);
@@ -16,6 +17,7 @@ function AddTaskDropdown({className, addTask}) {
         setTask(e.target.value)
     }
 
+    //Create new card and add to array
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTask = {
@@ -27,8 +29,8 @@ function AddTaskDropdown({className, addTask}) {
         setTask('');
     }
 
-return (
-<div className={className}>
+    return (
+    <div className={className}>
     <hr className='hr' />
     <div className="dropdownWrapper">
         <button onClick={handleButtonClick} className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i> Add
