@@ -35,12 +35,18 @@ body {
 
 .searchInput {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 5px;
+  padding: 5px 8px;
   height: 32px;
   width: 250px;
   border-radius: 5px;
   border: 1px solid #18181a;
   background-color: #18181a;
+  color: #999999;
+
+}
+.searchInput::placeholder{
+  color: #999999;
+  opacity: 1;
 }
 
 .leftSideInfo {
@@ -228,5 +234,22 @@ body {
   background-color: #252529;
   min-width: 26rem;
   height: 94vh;
+}
 
+.tabContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBarTab{
+  background-color: #26262c;
+  cursor: pointer;
+  color: #c5c5cc;
+  padding: 20px;
+  border: 1px solid #212125;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.sideBarTab:hover{
+  background-color: #3b3b41;
 }

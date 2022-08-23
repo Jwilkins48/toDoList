@@ -43,6 +43,7 @@ function App() {
  
   const addTask = (newTask) => {
     newTask.id = uuidv4();
+    setFilteredList([newTask, ...defaultTasks])
     setDefaultTasks([newTask, ...defaultTasks])
   }
   //

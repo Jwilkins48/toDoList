@@ -6,9 +6,9 @@ function SideBar({displayAll, displayCompleted, displayToday}) {
     <div className='sideBarContainer'>
       <div className='tabContainer'>
         {/* Filter through tabs */}
-        <button onClick={displayToday}>Today</button> 
-        <button onClick={displayAll} >All Tasks</button>
-        <button onClick={displayCompleted}>Completed Tasks</button>
+        <button className='sideBarTab' onClick={displayToday}>Today</button> 
+        <button className='sideBarTab' onClick={displayAll} >All Tasks</button>
+        <button className='sideBarTab' onClick={displayCompleted}>Completed Tasks</button>
       </div>
     </div>
   )
