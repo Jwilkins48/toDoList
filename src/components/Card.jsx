@@ -29,15 +29,6 @@ editTask(id,updatedToDo)
 setEditing(false)
 }
 
-let viewMode = {};
-let editMode = {};
-
-if(editing){
-viewMode.display = 'none'
-} else {
-editMode.display = 'none'
-}
-
 return (
 <div>
     {defaultTasks.map((item) => (
@@ -45,12 +36,12 @@ return (
         <Checkbox defaultTasks={defaultTasks} item={item} />
 
         {/* Task */}
-        <h3 style={viewMode} className='tasks'>{item.task}</h3>
+        <h3 hidden={editing} className='tasks'>{item.task}</h3>
         {/* Edit input */}
-        <input onChange={handleEditChange} defaultValue={item.task} style={editMode} type='text'
+        <input  hidden={!editing} onChange={handleEditChange} defaultValue={item.task}  type='text'
             className='editInput'></input>
-        <button onClick={()=> handleUpdateClick(item.id)} className='updateBtn' style={editMode} >Update</button>
-        <button onClick={()=> setEditing(false)} style={editMode} className='updateBtn'>Cancel</button>
+        <button hidden={!editing} onClick={()=> handleUpdateClick(item.id)} className='updateBtn' >Update</button>
+        <button hidden={!editing} onClick={()=> setEditing(false)} className='updateBtn'>Cancel</button>
 
 
         <button onClick={()=> handleEditClick(item.id)} className='editBtn'><i
