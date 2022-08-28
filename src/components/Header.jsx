@@ -1,30 +1,22 @@
 import { useState } from 'react';
 
-function Header({addTask}) {
+function Header({defaultTasks, addTask}) {
 
-const [tasks, setTasks] = useState('');
+const [searchValue, setSearchValue] = useState("");
 
 const handleChange = (e) => {
-  setTasks(e.target.value);
+  setSearchValue(e.target.value);
+  console.log(searchValue);
 }
-
-const handleSubmit = (e) => {
-  e.preventDefault();
-  const newTask = {
-  task: tasks,
-  date: Date.now()
-  }
-  addTask(newTask);
-  setTasks('');
-}
-
 
 return (
 <div className='headerContainer'>
   <div className="leftSideInfo">
     <i class="fa-solid fa-clipboard-check mainLogo"></i>
     <div className="inputContainer">
-      <input className='searchInput' type='text' name='searchTask' placeholder='Search'></input>
+      <input value={searchValue} onChange={handleChange} className='searchInput' type='text' name='searchTask' placeholder='Search'></input>
+      <ul>
+      </ul>
     </div>
   </div>
 

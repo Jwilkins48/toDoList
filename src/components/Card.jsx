@@ -2,58 +2,47 @@ import React from 'react'
 import Checkbox from './Checkbox';
 import {useState} from 'react';
 
-
-
-function Card({defaultTasks, deleteTask, editTask}) {
-
+function Card({task, defaultTasks, deleteTask, editTask}) {
 const [editing, setEditing] = useState(false);
 const [updatedToDo, setUpdatedToDo] = useState('');
+
+
+const handleUpdateClick = (id) => {
+    editTask(id,updatedToDo)
+    setEditing(false)
+}
 
 const handleEditChange = (e) => {
 setUpdatedToDo(e.target.value);
 console.log(updatedToDo);
 }
 
-const handleEditClick = (id) => {
-defaultTasks.map(item => {
-if(item.id === id){
-setEditing(true);
-}
-return editing
-})
-}
+const showEdit = (
+<div className='card'>
+    <Checkbox task={task} defaultTasks={defaultTasks} />
 
-const handleUpdateClick = (id) => {
+    <input onChange={handleEditChange} defaultValue={task.task} type='text'
+        className='editInput'></input>
 
-editTask(id,updatedToDo)
-setEditing(false)
-}
+    <button onClick={()=> handleUpdateClick(task.id)} className='updateBtn' >Update</button>
+    <button onClick={()=> setEditing(false)} className='updateBtn'>Cancel</button>
 
-return (
-<div>
-    {defaultTasks.map((item) => (
-    <div className='card' key={item.id}>
-        <Checkbox defaultTasks={defaultTasks} item={item} />
-
-        {/* Task */}
-        <h3 hidden={editing} className='tasks'>{item.task}</h3>
-        {/* Edit input */}
-        <input  hidden={!editing} onChange={handleEditChange} defaultValue={item.task}  type='text'
-            className='editInput'></input>
-        <button hidden={!editing} onClick={()=> handleUpdateClick(item.id)} className='updateBtn' >Update</button>
-        <button hidden={!editing} onClick={()=> setEditing(false)} className='updateBtn'>Cancel</button>
-
-
-        <button onClick={()=> handleEditClick(item.id)} className='editBtn'><i
-                class="fa-solid fa-pen-to-square"></i></button>
-        <button onClick={()=> deleteTask(item.id)} className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
-
-
-
-    </div>
-    ))}
+    <button onClick={() => setEditing(true)} className='editBtn'><i class="fa-solid fa-pen-to-square"></i></button>
+    <button onClick={()=> deleteTask(task.id)} className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
 </div>
-)
+);
+
+const showTasks = (
+    <div className='card'>
+        <Checkbox task={task} defaultTasks={defaultTasks} />
+        <label htmlFor={task.id} className="tasks">{task.task}</label>
+        <button onClick={() => setEditing(true)} className="editBtn"><i
+                class="fa-solid fa-pen-to-square"></i></button>
+        <button onClick={()=> deleteTask(task.id)} className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
+    </div>
+);
+
+return <div ><h2>{editing ? showEdit : showTasks}</h2></div>
 }
 
 export default Card

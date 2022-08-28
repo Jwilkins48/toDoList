@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
 
-function Checkbox({defaultTasks, item}) {
+function Checkbox({defaultTasks, task}) {
     const [checked, setChecked] = useState(false);
 
     const handleCheckChange = (id) => {
@@ -13,11 +13,11 @@ function Checkbox({defaultTasks, item}) {
             }
             return item.checked
         }) 
-        console.log(`item is ${item.checked}`);
+        console.log(`item is ${task.checked}`);
     }
 return (
 <div>
-    <input className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(item.id)} checked={checked}></input>
+    <input className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={checked}></input>
 </div>
 )
 }
