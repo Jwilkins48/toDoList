@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SideBar({displayAll, displayCompleted, displayToday}) {
+function SideBar({displayIncomplete, displayAll, displayCompleted, displayToday}) {
 
   return (
     <div className='sideBarContainer'>
@@ -8,8 +8,8 @@ function SideBar({displayAll, displayCompleted, displayToday}) {
         {/* Filter through tabs */}
         <button className='sideBarTab' onClick={displayToday}>Today</button>
         <button className='sideBarTab' onClick={displayAll} >All Tasks</button>
-        <button className='sideBarTab' >Incomplete Tasks</button> 
-        <button className='sideBarTab' >Completed Tasks</button>
+        <button className='sideBarTab' onClick={displayIncomplete}>Incomplete Tasks</button> 
+        <button className='sideBarTab' onClick={displayCompleted}>Completed Tasks</button>
       </div>
     </div>
   )

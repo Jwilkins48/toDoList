@@ -26,6 +26,10 @@ function App() {
   const displayCompleted = () => {
     setDefaultTasks(filteredList.filter((item) => item.checked === true));
   }
+  //Display Incomplete Tasks
+  const displayIncomplete = () => {
+    setDefaultTasks(filteredList.filter((item) => item.checked === false));
+  }
   //Display Todays Tasks
   const displayToday = () => {
     setDefaultTasks(filteredList.filter((item) => item.date === CurrentDate));
@@ -48,6 +52,7 @@ function App() {
  
   const addTask = (newTask) => {
     newTask.id = uuidv4();
+    newTask.checked = false;
     setFilteredList([newTask, ...defaultTasks])
     setDefaultTasks([newTask, ...defaultTasks])
   }
@@ -58,7 +63,7 @@ function App() {
       <Header open={open} setOpen={setOpen} defaultTasks={defaultTasks} addTask={addTask}/>
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
-          <SideBar displayToday={displayToday} displayAll={displayAll}  displayCompleted={displayCompleted} defaultTasks={defaultTasks} />
+          <SideBar displayIncomplete={displayIncomplete} displayToday={displayToday} displayAll={displayAll}  displayCompleted={displayCompleted} defaultTasks={defaultTasks} />
         </div>
 
         <div className='homeRightSide'>

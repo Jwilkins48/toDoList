@@ -151,9 +151,12 @@ body {
   cursor: pointer;
 }
 
-.tasks {
+#tasks {
   color: #c5c5cc;
   margin-left: 10px;
+}
+.crossOut{
+  text-decoration: line-through;
 }
 
 /* ADD TASK DROPDOWN */
