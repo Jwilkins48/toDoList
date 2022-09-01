@@ -1,13 +1,10 @@
-import { useState } from 'react';
 
-function Header({open, setOpen, defaultTasks, addTask}) {
-
+function Header({open, setOpen}) {
 
   const handleButtonClick = () => {
     setOpen(!open)
     console.log(open);
 }
-
 return (
 <div className='headerContainer'>
   <div className="leftSideInfo">
@@ -15,7 +12,7 @@ return (
   </div>
 
   <div className="rightSideInfo">
-    <button onClick={handleButtonClick} className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i></button>
+    <button onClick={handleButtonClick} id='headerAddBtn' className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i></button>
   </div>
 </div>
 )

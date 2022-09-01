@@ -7,6 +7,7 @@ const [updatedToDo, setUpdatedToDo] = useState('');
 const [complete, setComplete] = useState(task.checked);
 const [checked, setChecked] = useState(false);
 
+//Check checkbox on click
 const handleCheckChange = (id) => {
     //Mark and label checked boxes
     setChecked(!checked)
@@ -18,12 +19,6 @@ const handleCheckChange = (id) => {
     })
     console.log(`item is ${task.checked}`);
 }
-
-
-
-
-
-
 
 const handleUpdateClick = (id) => {
     editTask(id,updatedToDo)

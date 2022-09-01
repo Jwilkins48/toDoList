@@ -57,10 +57,13 @@ body {
   cursor: pointer;
   background: none;
   border: none;
-  color: #8383a3;
   font-size: 23px;
-  margin: 20px 50px 0 0;
+  margin: 15px 50px 0 0;
 }
+#headerAddBtn:hover{
+  color: #8383a3;
+}
+
 
 /* MAIN CONTENT */
 .mainContentContainer {
@@ -177,8 +180,8 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  position: absolute;
   margin-left: 10px;
+  margin-bottom: 30px;
   width: 800px;
   z-index: 2;
   border: 1px solid white;
@@ -241,7 +244,8 @@ body {
   border-top: 1px solid #202024;
   background-color: #252529;
   min-width: 26rem;
-  height: 94vh;
+  height: auto;
+  min-height: 100vh;
 }
 
 .tabContainer{
