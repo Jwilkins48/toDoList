@@ -16,14 +16,14 @@ body {
   display: flex;
   justify-content: space-between;
   background-color: #252529;
-  height: 68px;
+  height: 69px;
 }
 
 .mainLogo {
   width: auto;
-  font-size: 43px;
+  font-size: 45px;
   color: #67678a;
-  margin: 10px 0 0 60px;
+  margin: 10px 0 0 12rem;
 }
 
 .inputContainer {
@@ -160,6 +160,11 @@ body {
 .dropdownWrapper {
   position: relative;
   width: 800px;
+}
+
+.dropBtnContainer{
+  display: flex;
+  gap: 15px;
 }
 
 #dropDown {

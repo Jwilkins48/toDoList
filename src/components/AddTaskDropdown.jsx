@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-function AddTaskDropdown({className, addTask}) {
+function AddTaskDropdown({className, addTask, open, setOpen}) {
     const current = new Date();
     const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
     const [task, setTask] = useState('');
 
     //Open Dropdown
@@ -38,7 +38,10 @@ function AddTaskDropdown({className, addTask}) {
 
         {open &&(<form onSubmit={handleSubmit} id="dropDown">
             <input onChange={handleChange} value={task} autoComplete='off' className='dropDownInput' placeholder='Enter Task'></input>
-            <button className='addTaskDropdownBtn'>Add Task</button>
+            <div className="dropBtnContainer">
+                <button onClick={handleButtonClick} className='addTaskDropdownBtn'>Cancel</button>
+                <button type='submit' className='addTaskDropdownBtn'>Add Task</button>
+            </div>
         </form>)}
     </div>
     

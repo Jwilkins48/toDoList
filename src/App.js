@@ -5,13 +5,18 @@ import data from './data/defaultTasks';
 import {useState} from 'react';
 import {v4 as uuidv4} from 'uuid'
 
-function App(props) {
+function App() {
+
   //Format Date
   const current = new Date();
   const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   //Task array
   const [defaultTasks, setDefaultTasks] = useState(data);
   const [filteredList, setFilteredList] = useState(defaultTasks);
+
+
+  const [open, setOpen] = useState(false);
+
 
   //Display All Tasks
   const displayAll = () => {
@@ -50,14 +55,14 @@ function App(props) {
   
   return (
     <div className="App">
-      <Header defaultTasks={defaultTasks} addTask={addTask}/>
+      <Header open={open} setOpen={setOpen} defaultTasks={defaultTasks} addTask={addTask}/>
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
           <SideBar displayToday={displayToday} displayAll={displayAll}  displayCompleted={displayCompleted} defaultTasks={defaultTasks} />
         </div>
 
         <div className='homeRightSide'>
-          <AllTasks editTask={editTask} deleteTask={deleteTask} addTask={addTask} defaultTasks={defaultTasks} />
+          <AllTasks open={open} setOpen={setOpen} editTask={editTask} deleteTask={deleteTask} addTask={addTask} defaultTasks={defaultTasks} />
         </div>
       </div>
       
