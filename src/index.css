@@ -22,7 +22,7 @@ body {
 .mainLogo {
   width: auto;
   font-size: 45px;
-  color: #67678a;
+  color: #7c3535;
   margin: 10px 0 0 12rem;
 }
 
@@ -60,8 +60,11 @@ body {
   font-size: 23px;
   margin: 15px 50px 0 0;
 }
+#headerAddBtn{
+  color:#ad4a4a;
+}
 #headerAddBtn:hover{
-  color: #8383a3;
+  color: #8b3b3b;
 }
 
 
@@ -73,6 +76,10 @@ body {
 .allTaskHeader {
   color: #c5c5cc;
   margin: 55px 60px;
+}
+.numberSpan{
+  color: #ad4a4a;
+  margin-right: 2px;
 }
 
 .card {
@@ -282,6 +289,10 @@ body {
     width: 26rem;
     height: 90px;
   }
+  .hr{
+    margin: 10px -40px;
+    width: 365px;
+  }
   .dropBtnContainer{
     margin-top: 15px;
   }
@@ -298,7 +309,7 @@ body {
     width: 300px;
   }
   .mainLogo{
-    margin: 15px 40px;
+    margin: 15px 26px;
     font-size: 55px;
   }
   .editBtn{
@@ -310,6 +321,9 @@ body {
   }
   #openDropAddBtn, #dropAddIcon, .allTaskHeader{
     font-size: 20px;
+  }
+  #openDropAddBtn{
+    margin-left: -40px;
   }
   .allTaskHeader{
     margin: 16px 27px;
