@@ -265,3 +265,57 @@ body {
 .sideBarTab:hover{
   background-color: #3b3b41;
 }
+
+
+/* MOBILE SECTION */
+@media(max-width: 900px) {
+  .homeLeftSide{
+   display: none;
+  }
+  .card{
+    width: 350px;
+    height: 90px;
+    margin: 5px 25px;
+    font-size: 20px;
+  }
+  .headerContainer{
+    width: 26rem;
+    height: 90px;
+  }
+  .dropBtnContainer{
+    margin-top: 15px;
+  }
+  .addTaskDropdownBtn{
+    width: 90px;
+  }
+  #dropDown{
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin: 10px -52px;
+  }
+  .dropDownInput{
+    width: 300px;
+  }
+  .mainLogo{
+    margin: 15px 40px;
+    font-size: 55px;
+  }
+  .editBtn{
+    font-size: 15px;
+    right: 38px;
+  }
+  #deleteBtn{
+    font-size: 19px;
+  }
+  #openDropAddBtn, #dropAddIcon, .allTaskHeader{
+    font-size: 20px;
+  }
+  .allTaskHeader{
+    margin: 16px 27px;
+  }
+  #headerAddBtn{
+    margin: 25px 50px;
+    font-size: 23px;
+  }
+}

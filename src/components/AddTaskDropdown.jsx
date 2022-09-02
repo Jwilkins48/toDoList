@@ -33,7 +33,7 @@ function AddTaskDropdown({className, addTask, open, setOpen}) {
     <div className={className}>
     <hr className='hr' />
     <div className="dropdownWrapper">
-        <button onClick={handleButtonClick} className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i> Add
+        <button onClick={handleButtonClick} id='openDropAddBtn' className='addTaskBtn'><i id='dropAddIcon' class="fa-solid fa-plus addIcon"></i> Add
         Task</button>
 
         {open &&(<form onSubmit={handleSubmit} id="dropDown">

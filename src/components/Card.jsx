@@ -45,7 +45,7 @@ const showEdit = (
     <button onClick={()=> setEditing(false)} className='updateBtn'>Cancel</button>
 
     <button onClick={() => setEditing(true)} className='editBtn'><i class="fa-solid fa-pen-to-square"></i></button>
-    <button onClick={()=> deleteTask(task.id)} className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
+    <button onClick={()=> deleteTask(task.id)} id='deleteBtn' className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
 </div>
 );
 
@@ -55,7 +55,7 @@ const showTasks = (
         <label htmlFor={task.id} className={complete ? 'crossOut' : null} id="tasks">{task.task}</label>
         <button onClick={() => setEditing(true)} className="editBtn"><i
                 class="fa-solid fa-pen-to-square"></i></button>
-        <button onClick={()=> deleteTask(task.id)} className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
+        <button onClick={()=> deleteTask(task.id)} id='deleteBtn' className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
     </div>
 );
 
