@@ -39,9 +39,6 @@ function App() {
     setDefaultTasks(filteredList.filter((item) => item.date === CurrentDate));
   }
 
-
-
-
   //Edit-Add-Delete Task Buttons
   const editTask = (id, newToDo) => {
     const editedToDo = defaultTasks.map(item => { 
@@ -52,14 +49,10 @@ function App() {
       return item;
     })
     setDefaultTasks(editedToDo);
-    // saveLocalStorage(editedToDo);
-    window.localStorage.setItem('task', JSON.stringify(editedToDo));
   }
 
   const deleteTask = (id) => {
     setDefaultTasks(defaultTasks.filter((item) => item.id !== id));
-    // saveLocalStorage(defaultTasks.filter((item) => item.id !== id));
-    window.localStorage.setItem('task', JSON.stringify(defaultTasks.filter((item) => item.id !== id)));
 
   }
  
@@ -68,10 +61,7 @@ function App() {
     newTask.checked = false;
     setFilteredList([newTask, ...defaultTasks])
     setDefaultTasks([newTask, ...defaultTasks])
-    // saveLocalStorage(newTask);
-    window.localStorage.setItem('task', JSON.stringify(newTask));
   }
-  //
   
   return (
     <div className="App">

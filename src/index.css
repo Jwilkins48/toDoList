@@ -247,6 +247,16 @@ body {
 }
 
 /* LEFT SIDEBAR */
+
+.tabBtn{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  color: #c5c5cc;
+}
+
 .homeLeftSide {
   border-top: 1px solid #202024;
   background-color: #252529;
