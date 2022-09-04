@@ -2,7 +2,7 @@ import AllTasks from './components/AllTasks';
 import Header from './components/Header';
 import SideBar from './components/SideBar';
 import data from './data/defaultTasks';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {v4 as uuidv4} from 'uuid'
 
 function App() {
@@ -10,13 +10,17 @@ function App() {
   //Format Date
   const current = new Date();
   const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-  //Task array
-  const [defaultTasks, setDefaultTasks] = useState(data);
+  //Task array and local storage
+  const savedTasks = JSON.parse(localStorage.getItem('defaultTasks'))
+  const [defaultTasks, setDefaultTasks] = useState(savedTasks || data);
   const [filteredList, setFilteredList] = useState(defaultTasks);
-
 
   const [open, setOpen] = useState(false);
 
+  // Local Storage
+  useEffect(() => {
+    localStorage.setItem('defaultTasks', JSON.stringify(defaultTasks))
+  });
 
   //Display All Tasks
   const displayAll = () => {
@@ -35,19 +39,28 @@ function App() {
     setDefaultTasks(filteredList.filter((item) => item.date === CurrentDate));
   }
 
+
+
+
   //Edit-Add-Delete Task Buttons
   const editTask = (id, newToDo) => {
     const editedToDo = defaultTasks.map(item => { 
       if(id === item.id){
         return { ...defaultTasks, task: newToDo}
       }
+
       return item;
     })
     setDefaultTasks(editedToDo);
+    // saveLocalStorage(editedToDo);
+    window.localStorage.setItem('task', JSON.stringify(editedToDo));
   }
 
   const deleteTask = (id) => {
     setDefaultTasks(defaultTasks.filter((item) => item.id !== id));
+    // saveLocalStorage(defaultTasks.filter((item) => item.id !== id));
+    window.localStorage.setItem('task', JSON.stringify(defaultTasks.filter((item) => item.id !== id)));
+
   }
  
   const addTask = (newTask) => {
@@ -55,6 +68,8 @@ function App() {
     newTask.checked = false;
     setFilteredList([newTask, ...defaultTasks])
     setDefaultTasks([newTask, ...defaultTasks])
+    // saveLocalStorage(newTask);
+    window.localStorage.setItem('task', JSON.stringify(newTask));
   }
   //
   

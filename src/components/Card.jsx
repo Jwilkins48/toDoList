@@ -59,7 +59,7 @@ const showTasks = (
     </div>
 );
 
-return <div ><h2>{editing ? showEdit : showTasks}</h2></div>
+return <div><h2>{editing ? showEdit : showTasks}</h2></div>
 }
 
 export default Card
