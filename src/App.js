@@ -22,23 +22,6 @@ function App() {
     localStorage.setItem('defaultTasks', JSON.stringify(defaultTasks))
   });
 
-  //Display All Tasks
-  const displayAll = () => {
-    setDefaultTasks(filteredList)
-  }
-  //Display Completed Tasks
-  const displayCompleted = () => {
-    setDefaultTasks(filteredList.filter((item) => item.checked === true));
-  }
-  //Display Incomplete Tasks
-  const displayIncomplete = () => {
-    setDefaultTasks(filteredList.filter((item) => item.checked === false));
-  }
-  //Display Todays Tasks
-  const displayToday = () => {
-    setDefaultTasks(filteredList.filter((item) => item.date === CurrentDate));
-  }
-
   //Edit-Add-Delete Task Buttons
   const editTask = (id, newToDo) => {
     const editedToDo = defaultTasks.map(item => { 
@@ -68,7 +51,7 @@ function App() {
       <Header open={open} setOpen={setOpen} defaultTasks={defaultTasks} addTask={addTask}/>
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
-          <SideBar displayIncomplete={displayIncomplete} displayToday={displayToday} displayAll={displayAll}  displayCompleted={displayCompleted} defaultTasks={defaultTasks} />
+          <SideBar filteredList={filteredList} setDefaultTasks={setDefaultTasks} />
         </div>
 
         <div className='homeRightSide'>
