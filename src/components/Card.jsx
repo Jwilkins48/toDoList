@@ -5,19 +5,18 @@ function Card({task, defaultTasks, deleteTask, editTask}) {
 const [editing, setEditing] = useState(false);
 const [updatedToDo, setUpdatedToDo] = useState('');
 const [complete, setComplete] = useState(task.checked);
-const [checked, setChecked] = useState(false);
 
 //Check checkbox on click
 const handleCheckChange = (id) => {
     //Mark and label checked boxes
-    setChecked(!checked)
+    setComplete(!complete) 
     defaultTasks.map(item => {
         if(item.id === id){
-            item.checked = !checked
+            item.checked = !complete 
         }
         return item.checked
     })
-    console.log(`item is ${task.checked}`);
+    console.log(`item is ${complete}`);
 }
 
 const handleUpdateClick = (id) => {
@@ -36,7 +35,7 @@ const handleCheckbox = () => {
 
 const showEdit = (
 <div className='card'>
-    <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={task.checked}></input>
+    <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={complete}></input>
 
     <input onChange={handleEditChange} defaultValue={task.task} type='text'
         className='editInput'></input>
@@ -51,7 +50,7 @@ const showEdit = (
 
 const showTasks = (
     <div className='card'>
-        <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={task.checked}></input>
+        <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={complete}></input>
         <label htmlFor={task.id} className={complete ? 'crossOut' : null} id="tasks">{task.task}</label>
         <button onClick={() => setEditing(true)} className="editBtn"><i
                 class="fa-solid fa-pen-to-square"></i></button>
