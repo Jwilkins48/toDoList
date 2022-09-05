@@ -20,10 +20,9 @@ body {
 }
 
 .mainLogo {
-  width: auto;
   font-size: 45px;
   color: #7c3535;
-  margin: 10px 0 0 12rem;
+  margin: 10px 0 0 2rem;
 }
 
 .inputContainer {
@@ -62,6 +61,7 @@ body {
 }
 #headerAddBtn{
   color:#ad4a4a;
+  margin-right: 2rem;
 }
 #headerAddBtn:hover{
   color: #8b3b3b;
@@ -70,12 +70,12 @@ body {
 
 /* MAIN CONTENT */
 .mainContentContainer {
-  display: flex;
+
 }
 
 .allTaskHeader {
   color: #c5c5cc;
-  margin: 55px 60px;
+  margin: 25px
 }
 .numberSpan{
   color: #ad4a4a;
@@ -83,13 +83,12 @@ body {
 }
 
 .card {
+  margin: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   align-items: center;
-  padding: 15px;
-  margin: 35px 60px;
+  padding: 5px;
   border: 1px white solid;
-  width: 80rem;
   position: relative;
 }
 
@@ -172,34 +171,35 @@ body {
 /* ADD TASK DROPDOWN */
 .dropdownWrapper {
   position: relative;
-  width: 800px;
+  margin: 10px;
 }
 
 .dropBtnContainer{
   display: flex;
   gap: 15px;
+  margin-left: 10px;
 }
 
 #dropDown {
+  display: flex;
+  width: fit-content;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 4px;
   align-items: center;
-  display: flex;
   justify-content: space-between;
-  padding: 20px;
-  margin-left: 10px;
-  margin-bottom: 30px;
-  width: 800px;
+  padding: 10px;
   z-index: 2;
   border: 1px solid white;
 }
 
 .dropDownInput {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 400px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #eeeded;
   border-radius: 6px;
-  height: 45px;
+  height: 40px;
   padding: 10px;
   background-color: #39393f;
   color: #cdcdcf;
@@ -210,21 +210,20 @@ body {
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: .3rem;
   color: #c5c5cc;
   background-color: #39393f;
-  font-size: 1rem;
-  width: 100px;
+  font-size: .8rem;
   border: 1px solid;
   border-radius: 6px;
 }
 
 .mainPageAddForm {
-  margin-left: 60px;
+
 }
 
 .hr {
-  margin-right: 58px;
+  width: 87%;
 }
 
 .addTaskBtn {
@@ -259,25 +258,22 @@ body {
 
 .homeLeftSide {
   border-top: 1px solid #202024;
-  background-color: #252529;
-  min-width: 26rem;
-  height: auto;
-  min-height: 100vh;
+  height: fit-content;
 }
 
 .tabContainer{
   display: flex;
-  flex-direction: column;
 }
 
 .sideBarTab{
+  font-size: 13px;
   background-color: #26262c;
   cursor: pointer;
   color: #c5c5cc;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #212125;
   font-family: 'Montserrat', sans-serif;
-
+  width: 15rem;
 }
 .sideBarTab:hover{
   background-color: #3b3b41;
@@ -285,7 +281,7 @@ body {
 
 
 /* MOBILE SECTION */
-@media(max-width: 900px) {
+/* @media(max-width: 900px) {
   .homeLeftSide{
    display: none;
   }
@@ -343,4 +339,4 @@ body {
     margin: 25px 50px;
     font-size: 23px;
   }
-}
+} */

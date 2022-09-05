@@ -29,15 +29,13 @@ function SideBar({filteredList, setDefaultTasks}) {
     }
 
   return (
-    <div className='sideBarContainer'>
       <div className='tabContainer'>
         {/* Filter through tabs */}
-        <button style={{backgroundColor: active === types[0] ? '#a24242' : ''}} className="sideBarTab" onClick={displayToday}>{types[0]}</button>
+        {/* <button style={{backgroundColor: active === types[0] ? '#a24242' : ''}} className="sideBarTab" onClick={displayToday}>{types[0]}</button> */}
         <button style={{backgroundColor: active === types[1] ? '#a24242' : ''}} className='sideBarTab' onClick={displayAll} >{types[1]}</button>
         <button style={{backgroundColor: active === types[2] ? '#a24242' : ''}} className='sideBarTab' onClick={displayIncomplete}>{types[2]}</button> 
         <button style={{backgroundColor: active === types[3] ? '#a24242' : ''}}className='sideBarTab' onClick={displayCompleted}>{types[3]}</button>
       </div>
-    </div>
   )
 }
 
