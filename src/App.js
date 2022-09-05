@@ -12,7 +12,7 @@ function App() {
   const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
   //Task array and local storage
   const savedTasks = JSON.parse(localStorage.getItem('defaultTasks'))
-  const [defaultTasks, setDefaultTasks] = useState(savedTasks || data);
+  const [defaultTasks, setDefaultTasks] = useState(savedTasks);
   const [filteredList, setFilteredList] = useState(defaultTasks);
 
   const [open, setOpen] = useState(false);

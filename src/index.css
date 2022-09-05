@@ -43,7 +43,8 @@ body {
   color: #999999;
 
 }
-.searchInput::placeholder{
+
+.searchInput::placeholder {
   color: #999999;
   opacity: 1;
 }
@@ -59,25 +60,23 @@ body {
   font-size: 23px;
   margin: 15px 50px 0 0;
 }
-#headerAddBtn{
-  color:#ad4a4a;
+
+#headerAddBtn {
+  color: #ad4a4a;
   margin-right: 2rem;
 }
-#headerAddBtn:hover{
+
+#headerAddBtn:hover {
   color: #8b3b3b;
 }
 
-
 /* MAIN CONTENT */
-.mainContentContainer {
-
-}
-
 .allTaskHeader {
   color: #c5c5cc;
   margin: 25px
 }
-.numberSpan{
+
+.numberSpan {
   color: #ad4a4a;
   margin-right: 2px;
 }
@@ -92,7 +91,7 @@ body {
   position: relative;
 }
 
-.editInput{
+.editInput {
   background-color: #39393f;
   color: #cccccc;
   width: 400px;
@@ -103,7 +102,7 @@ body {
   border: 1px solid #dfdfdf;
 }
 
-.editBtn{
+.editBtn {
   padding: 7px;
   cursor: pointer;
   font-size: 16px;
@@ -114,12 +113,13 @@ body {
   right: 40px;
   top: 7px;
 }
+
 .editBtn:hover {
   background-color: #4646468c;
   border-radius: 40px;
 }
 
-.updateBtn{
+.updateBtn {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: #39393f;
   color: #dfdfdf;
@@ -131,6 +131,7 @@ body {
   border: 1px solid;
   border-radius: 5px;
 }
+
 .updateBtn:hover {
   background-color: #4646468c;
   border-radius: 8px;
@@ -164,17 +165,18 @@ body {
   color: #c5c5cc;
   margin-left: 10px;
 }
-.crossOut{
+
+.crossOut {
   text-decoration: line-through;
 }
 
 /* ADD TASK DROPDOWN */
 .dropdownWrapper {
   position: relative;
-  margin: 10px;
+  margin: 12px;
 }
 
-.dropBtnContainer{
+.dropBtnContainer {
   display: flex;
   gap: 15px;
   margin-left: 10px;
@@ -218,12 +220,8 @@ body {
   border-radius: 6px;
 }
 
-.mainPageAddForm {
-
-}
-
 .hr {
-  width: 87%;
+  width: 90%;
 }
 
 .addTaskBtn {
@@ -247,7 +245,7 @@ body {
 
 /* LEFT SIDEBAR */
 
-.tabBtn{
+.tabBtn {
   width: 100%;
   height: 100%;
   background: transparent;
@@ -261,11 +259,11 @@ body {
   height: fit-content;
 }
 
-.tabContainer{
+.tabContainer {
   display: flex;
 }
 
-.sideBarTab{
+.sideBarTab {
   font-size: 13px;
   background-color: #26262c;
   cursor: pointer;
@@ -273,70 +271,58 @@ body {
   padding: 10px;
   border: 1px solid #212125;
   font-family: 'Montserrat', sans-serif;
-  width: 15rem;
+  width: 100%;
 }
-.sideBarTab:hover{
+
+.sideBarTab:hover {
   background-color: #3b3b41;
 }
 
 
-/* MOBILE SECTION */
-/* @media(max-width: 900px) {
-  .homeLeftSide{
-   display: none;
-  }
+/* TABLET SECTION */
+@media(min-width: 700px) {
   .card{
-    width: 335px;
-    height: 90px;
-    margin: 5px 15px;
-    font-size: 20px;
-  }
-  .headerContainer{
-    width: auto;
-    height: 90px;
-  }
-  .hr{
-    margin: 10px -51px;
-    width: 353px;
-  }
-  .dropBtnContainer{
-    margin-top: 15px;
-  }
-  .addTaskDropdownBtn{
-    width: 80px;
-    font-size: 13px;
+    margin: 1.5rem;
   }
   #dropDown{
-    display: flex;
-    flex-direction: column;
-    width: 345px;
-    margin: 10px -52px;
+    margin: 12px;
   }
   .dropDownInput{
     width: 300px;
   }
-  .mainLogo{
-    margin: 15px 26px;
-    font-size: 55px;
+  .addTaskDropdownBtn{
+    padding: .6rem;
   }
-  .editBtn{
-    font-size: 15px;
-    right: 38px;
+}
+
+/* DESKTOP SECTION */
+@media(min-width: 1200px) {
+  .dropdownWrapper{
+    margin-left: 1rem;
   }
-  #deleteBtn{
-    font-size: 19px;
+  .card{
+    width: 80rem;
+    padding: 1rem;
+    margin-bottom: 25px;
   }
-  #openDropAddBtn, #dropAddIcon, .allTaskHeader{
-    font-size: 20px;
+  .mainContentContainer{
+    display: flex;
   }
-  #openDropAddBtn{
-    margin-left: -45px;
+  .tabContainer{
+    display: flex;
+    flex-direction: column;
+    width: 26rem;
+
   }
-  .allTaskHeader{
-    margin: 16px 27px;
+  .hr{
+    width: 97%
   }
-  #headerAddBtn{
-    margin: 25px 50px;
-    font-size: 23px;
+  .homeRightSide{
+    margin-left: 10px;
   }
-} */
+  .homeLeftSide{
+    background-color: #26262c;
+    height: auto;
+    min-height: 93vh;
+  }
+}
