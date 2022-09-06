@@ -9,7 +9,7 @@ function App() {
 
   //Format Date
   const current = new Date();
-  const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+  const CurrentDate = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
   //Task array and local storage
   const savedTasks = JSON.parse(localStorage.getItem('defaultTasks'))
   const [defaultTasks, setDefaultTasks] = useState(savedTasks);
@@ -17,10 +17,22 @@ function App() {
 
   const [open, setOpen] = useState(false);
 
+  //DarkMode
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+
+  const toggleTheme = () => {
+    theme === 'dark' ? setTheme('light') : setTheme('dark');
+  };
+
   // Local Storage
   useEffect(() => {
     localStorage.setItem('defaultTasks', JSON.stringify(defaultTasks))
   });
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.body.classList = theme;
+  }, [theme]);
 
   //Edit-Add-Delete Task Buttons
   const editTask = (id, newToDo) => {
@@ -42,13 +54,14 @@ function App() {
   const addTask = (newTask) => {
     newTask.id = uuidv4();
     newTask.checked = false;
+    newTask.date = CurrentDate;
     setFilteredList([newTask, ...defaultTasks])
     setDefaultTasks([newTask, ...defaultTasks])
   }
   
   return (
-    <div className="App">
-      <Header open={open} setOpen={setOpen} defaultTasks={defaultTasks} addTask={addTask}/>
+    <div className={`App ${theme}`}>
+      <Header toggleTheme={toggleTheme} open={open} setOpen={setOpen} defaultTasks={defaultTasks} addTask={addTask}/>
       <div className='mainContentContainer'>
         <div className='homeLeftSide'>
           <SideBar filteredList={filteredList} setDefaultTasks={setDefaultTasks} />

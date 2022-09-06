@@ -51,7 +51,11 @@ const showEdit = (
 const showTasks = (
     <div className='card'>
         <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={complete}></input>
-        <label htmlFor={task.id} className={complete ? 'crossOut' : null} id="tasks">{task.task}</label>
+        <div className="innerText">
+            <label htmlFor={task.id} className={complete ? 'crossOut' : null} id="tasks">{task.task}</label>
+            {/* <label className='date'>{task.date}</label> */}
+        </div>
+
         <button onClick={() => setEditing(true)} className="editBtn"><i
                 class="fa-solid fa-pen-to-square"></i></button>
         <button onClick={()=> deleteTask(task.id)} id='deleteBtn' className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>

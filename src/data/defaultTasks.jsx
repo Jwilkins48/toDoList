@@ -1,6 +1,6 @@
 // Format Date
 const current = new Date();
-const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+const CurrentDate = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
 
 const defaultTasks = [
     

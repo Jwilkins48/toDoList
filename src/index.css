@@ -25,6 +25,25 @@ body {
   margin: 10px 0 0 2rem;
 }
 
+.rightSideInfo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.darkModeBtn{
+  border: transparent;
+  background: transparent;
+  color: #999999;
+  font-size: 1.4rem;
+  margin: 20px 20px 5px -25px;
+}
+.darkModeBtn:hover{
+  cursor: pointer;
+  color: #c4c4c4;
+}
+
 .inputContainer {
   display: flex;
   align-items: center;
@@ -297,6 +316,9 @@ body {
 
 /* DESKTOP SECTION */
 @media(min-width: 1200px) {
+  .mainLogo{
+    margin-left: 3rem;
+  }
   .sideBarTab{
     height: 4rem;
   }

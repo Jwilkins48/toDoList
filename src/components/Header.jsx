@@ -1,5 +1,5 @@
 
-function Header({open, setOpen}) {
+function Header({toggleTheme, open, setOpen}) {
 
   const handleButtonClick = () => {
     setOpen(!open)
@@ -13,6 +13,7 @@ return (
 
   <div className="rightSideInfo">
     <button onClick={handleButtonClick} id='headerAddBtn' className='addTaskBtn'><i class="fa-solid fa-plus addIcon"></i></button>
+    <button onClick={toggleTheme} className='darkModeBtn'><i class="fa-solid fa-lightbulb darkModeIcon"></i></button>
   </div>
 </div>
 )
