@@ -36,7 +36,7 @@ function App() {
 
   const deleteTask = (id) => {
     setDefaultTasks(defaultTasks.filter((item) => item.id !== id));
-
+    setFilteredList(defaultTasks.filter((item) => item.id !== id));
   }
  
   const addTask = (newTask) => {
