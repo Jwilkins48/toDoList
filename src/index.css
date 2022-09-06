@@ -297,6 +297,9 @@ body {
 
 /* DESKTOP SECTION */
 @media(min-width: 1200px) {
+  .sideBarTab{
+    height: 4rem;
+  }
   .dropdownWrapper{
     margin-left: 1rem;
   }
@@ -312,7 +315,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 26rem;
-
   }
   .hr{
     width: 97%

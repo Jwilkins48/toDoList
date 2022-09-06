@@ -1,12 +1,9 @@
 import { useState } from "react"
 
 function SideBar({filteredList, setDefaultTasks}) {
-  const types = ['Today', 'All Tasks', 'Incomplete Tasks', 'Completed Tasks' ]
+  
+  const types = ['All Tasks', 'Incomplete Tasks', 'Completed Tasks' ]
   const [active, setActive] = useState(types[0]);
-
-  //Format Date
-  const current = new Date();
-  const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
   const displayAll = () => {
       setDefaultTasks(filteredList)
