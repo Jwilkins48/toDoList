@@ -12,7 +12,7 @@ function App() {
   const CurrentDate = `${current.getMonth()+1}/${current.getDate()}/${current.getFullYear()}`;
   //Task array and local storage
   const savedTasks = JSON.parse(localStorage.getItem('defaultTasks'))
-  const [defaultTasks, setDefaultTasks] = useState(savedTasks);
+  const [defaultTasks, setDefaultTasks] = useState(savedTasks || data);
   const [filteredList, setFilteredList] = useState(defaultTasks);
 
   const [open, setOpen] = useState(false);
@@ -60,15 +60,15 @@ function App() {
   }
   
   return (
-    <div className={`App ${theme}`}>
-      <Header toggleTheme={toggleTheme} open={open} setOpen={setOpen} defaultTasks={defaultTasks} addTask={addTask}/>
+    <div style={{backgroundColor: theme === 'light' ? '#dadada' : ''}} className={`App ${theme}`}>
+      <Header theme={theme} toggleTheme={toggleTheme} open={open} setOpen={setOpen} defaultTasks={defaultTasks} addTask={addTask}/>
       <div className='mainContentContainer'>
-        <div className='homeLeftSide'>
-          <SideBar filteredList={filteredList} setDefaultTasks={setDefaultTasks} />
+        <div style={{backgroundColor: theme === 'light' ? '#dadada' : ''}} className={`homeLeftSide home-${theme}`}>
+          <SideBar theme={theme} filteredList={filteredList} setDefaultTasks={setDefaultTasks} />
         </div>
 
         <div className='homeRightSide'>
-          <AllTasks open={open} setOpen={setOpen} editTask={editTask} deleteTask={deleteTask} addTask={addTask} defaultTasks={defaultTasks} />
+          <AllTasks theme={theme} open={open} setOpen={setOpen} editTask={editTask} deleteTask={deleteTask} addTask={addTask} defaultTasks={defaultTasks} />
         </div>
       </div>
       

@@ -15,6 +15,7 @@ body {
 .headerContainer {
   display: flex;
   justify-content: space-between;
+  border: 1px solid #252529;
   background-color: #252529;
   height: 69px;
 }
@@ -180,11 +181,6 @@ body {
   cursor: pointer;
 }
 
-#tasks {
-  color: #c5c5cc;
-  margin-left: 10px;
-}
-
 .crossOut {
   text-decoration: line-through;
 }
@@ -274,11 +270,10 @@ body {
 }
 
 .homeLeftSide {
-  border-top: 1px solid #202024;
   height: fit-content;
 }
 
-.tabContainer {
+#tabContainer {
   display: flex;
 }
 
@@ -293,10 +288,40 @@ body {
   width: 100%;
 }
 
+/* LIGHT START */
+
+.home-light{
+  border-right: 1px solid #817b7b;
+}
+
 .sideBarTab:hover {
   background-color: #3b3b41;
 }
 
+.sideBarTab.light:hover{
+  background-color: #eeeded;
+}
+
+.sideBarTab.light{
+  border-bottom: #beb5b5 1px solid;
+  border-top: none;
+  border-right: none;
+  font-weight: bold;
+}
+
+.light{
+  background-color: #dadada;
+  color: #4d494a;
+}
+/* Card Label */
+.label-light{
+  margin-left: 10px;
+}
+.label-dark{
+  color: #c5c5cc;
+  margin-left: 10px;
+}
+/* LIGHT END */
 
 /* TABLET SECTION */
 @media(min-width: 700px) {
@@ -333,7 +358,7 @@ body {
   .mainContentContainer{
     display: flex;
   }
-  .tabContainer{
+  #tabContainer{
     display: flex;
     flex-direction: column;
     width: 26rem;

@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
 
-function Card({task, defaultTasks, deleteTask, editTask}) {
+function Card({theme, task, defaultTasks, deleteTask, editTask}) {
 const [editing, setEditing] = useState(false);
 const [updatedToDo, setUpdatedToDo] = useState('');
 const [complete, setComplete] = useState(task.checked);
@@ -38,7 +38,7 @@ const showEdit = (
     <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={complete}></input>
 
     <input onChange={handleEditChange} defaultValue={task.task} type='text'
-        className='editInput'></input>
+        className={`editInput ${theme}`}></input>
 
     <button onClick={()=> handleUpdateClick(task.id)} className='updateBtn' >Update</button>
     <button onClick={()=> setEditing(false)} className='updateBtn'>Cancel</button>
@@ -52,13 +52,13 @@ const showTasks = (
     <div className='card'>
         <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={complete}></input>
         <div className="innerText">
-            <label htmlFor={task.id} className={complete ? 'crossOut' : null} id="tasks">{task.task}</label>
+            <label htmlFor={task.id} className={complete ? 'crossOut' : `label-${theme}`}>{task.task}</label>
             {/* <label className='date'>{task.date}</label> */}
         </div>
 
-        <button onClick={() => setEditing(true)} className="editBtn"><i
+        <button onClick={() => setEditing(true)} className={`editBtn ${theme}`}><i
                 class="fa-solid fa-pen-to-square"></i></button>
-        <button onClick={()=> deleteTask(task.id)} id='deleteBtn' className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>
+        <button onClick={()=> deleteTask(task.id)} id='deleteBtn' className={`optionsBtn ${theme}`}><i class="fa-solid fa-xmark"></i></button>
     </div>
 );
 

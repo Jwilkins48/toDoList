@@ -1,12 +1,12 @@
 
-function Header({toggleTheme, open, setOpen}) {
+function Header({toggleTheme, theme, open, setOpen}) {
 
   const handleButtonClick = () => {
     setOpen(!open)
     console.log(open);
 }
 return (
-<div className='headerContainer'>
+<div className='headerContainer' style={{backgroundColor: theme === 'light' ? '#dadada' : ''}}>
   <div className="leftSideInfo">
     <i class="fa-solid fa-clipboard-check mainLogo"></i>
   </div>

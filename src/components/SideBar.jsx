@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function SideBar({filteredList, setDefaultTasks}) {
+function SideBar({theme, filteredList, setDefaultTasks}) {
   
   const types = ['All Tasks', 'Incomplete Tasks', 'Completed Tasks' ]
   const [active, setActive] = useState(types[0]);
@@ -21,11 +21,11 @@ function SideBar({filteredList, setDefaultTasks}) {
       }
 
   return (
-      <div className='tabContainer'>
+      <div id='tabContainer'>
         {/* Filter through tabs */}
-        <button style={{backgroundColor: active === types[0] ? '#a24242' : ''}} className='sideBarTab' onClick={displayAll} >{types[0]}</button>
-        <button style={{backgroundColor: active === types[1] ? '#a24242' : ''}} className='sideBarTab' onClick={displayIncomplete}>{types[1]}</button> 
-        <button style={{backgroundColor: active === types[2] ? '#a24242' : ''}}className='sideBarTab' onClick={displayCompleted}>{types[2]}</button>
+        <button style={{backgroundColor: active === types[0] ? '#a24242' : '', color: active === types[0] ? '#c5c5cc' : ''}} className={`sideBarTab ${theme}`} onClick={displayAll} >{types[0]}</button>
+        <button style={{backgroundColor: active === types[1] ? '#a24242' : '', color: active === types[1] ? '#c5c5cc' : ''}} className={`sideBarTab ${theme}`} onClick={displayIncomplete}>{types[1]}</button> 
+        <button style={{backgroundColor: active === types[2] ? '#a24242' : '', color: active === types[2] ? '#c5c5cc' : ''}} className={`sideBarTab ${theme}`} onClick={displayCompleted}>{types[2]}</button>
       </div>
   )
 }
