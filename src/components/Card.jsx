@@ -38,10 +38,10 @@ const showEdit = (
     <input onClick={handleCheckbox} className='checkbox' type='checkbox' name='check' onChange={() => handleCheckChange(task.id)} checked={complete}></input>
 
     <input onChange={handleEditChange} defaultValue={task.task} type='text'
-        className={`editInput ${theme}`}></input>
+        className={`editInput edit-${theme}`}></input>
 
-    <button onClick={()=> handleUpdateClick(task.id)} className='updateBtn' >Update</button>
-    <button onClick={()=> setEditing(false)} className='updateBtn'>Cancel</button>
+    <button onClick={()=> handleUpdateClick(task.id)} className={`updateBtn update-${theme}`} >Update</button>
+    <button onClick={()=> setEditing(false)} className={`updateBtn update-${theme}`}>Cancel</button>
 
     <button onClick={() => setEditing(true)} className='editBtn'><i class="fa-solid fa-pen-to-square"></i></button>
     <button onClick={()=> deleteTask(task.id)} id='deleteBtn' className='optionsBtn'><i class="fa-solid fa-xmark"></i></button>

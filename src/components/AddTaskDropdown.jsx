@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function AddTaskDropdown({className, addTask, open, setOpen}) {
+function AddTaskDropdown({className, addTask, open, setOpen, theme}) {
     const current = new Date();
     const CurrentDate = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
@@ -37,10 +37,10 @@ function AddTaskDropdown({className, addTask, open, setOpen}) {
         Task</button>
 
         {open &&(<form onSubmit={handleSubmit} id="dropDown">
-            <input onChange={handleChange} value={task} autoComplete='off' className='dropDownInput' placeholder='Enter Task'></input>
+            <input onChange={handleChange} value={task} autoComplete='off' className={`dropDownInput dropDown-${theme}`} placeholder='Enter Task'></input>
             <div className="dropBtnContainer">
-                <button onClick={handleButtonClick} className='addTaskDropdownBtn'>Cancel</button>
-                <button type='submit' className='addTaskDropdownBtn'>Add Task</button>
+                <button onClick={handleButtonClick} className={`addTaskDropdownBtn addDropDown-${theme}`}>Cancel</button>
+                <button type='submit' className={`addTaskDropdownBtn addDropDown-${theme}`}>Add Task</button>
             </div>
         </form>)}
     </div>

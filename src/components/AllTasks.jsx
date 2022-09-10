@@ -12,7 +12,7 @@ return (
     {defaultTasks.map(task => (
     <Card theme={theme} key={task.id} task={task} id={task.id} editTask={editTask} deleteTask={deleteTask}
       defaultTasks={defaultTasks} />))}
-    <AddTaskDropdown open={open} setOpen={setOpen} addTask={addTask} className={'mainPageAddForm'} />
+    <AddTaskDropdown theme={theme} open={open} setOpen={setOpen} addTask={addTask} className={'mainPageAddForm'} />
 
   </div>
 </div>
